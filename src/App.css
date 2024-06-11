@@ -1,9 +1,95 @@
-    .btnparti{
+/* Style for the navbar toggler button when in responsive mode */
+.navbar-toggler {
+  border-color: white;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}   
+   
+   
+   
+   .btnparti{
       color: white;
-      background-color: rgb(68, 128, 7);
+      background-color: rgb(68, 14, 233);
       width: 50%;
       height: 60px;
       border: none;
+      padding-top: 15px;
+      padding-left: 15px;
+    }
+     .nav-link:hover{
+      border-bottom: 2px solid white;
+    }
+    a:hover{
+      border-bottom: 2px solid white;
     }
 
+/* animate */
+    .my-element {
+      display: inline-block;
+      margin: 0 0.5rem;
+    
+      animation: bounce; /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 2s; /* don't forget to set a duration! */
+    }
+
+  /* css button */
+
+  button {
+    outline: 0;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    width: 120%;
+    max-width: 140px;
+    height: 50px;
+    border-radius: 0.5em;
+    box-shadow: 0 0.625em 1em 0 rgba(30, 143, 255, 0.35);
+    overflow: hidden;
+   }
+   
+   button div {
+    transform: translateY(0px);
+    width: 200%;
+   }
+   
+   button,
+   button div {
+    transition: 0.6s cubic-bezier(.16,1,.3,1);
+   }
+   
+   button div span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0.75em 1.125em;
+   }
+   
+   button div:nth-child(1) {
+    background-color: #1e90ff;
+   }
+   
+   button div:nth-child(2) {
+    background-color: #21dc62;
+   }
+   
+   button:hover {
+    box-shadow: 0 0.625em 1em 0 rgba(33, 220, 98, 0.35);
+   }
+   
+   button:hover div {
+    transform: translateY(-50px);
+   }
+   
+   button p {
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffffff;
+   }
+   
+   button:active {
+    transform: scale(0.95);
+   }
   
