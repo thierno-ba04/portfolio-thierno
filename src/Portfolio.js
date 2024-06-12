@@ -13,11 +13,46 @@ import imgajou from "./assets/img/ajou1351.png";
 import "animate.css";
 import imgsign from "./assets/img/Capture d'écran 2024-06-11 164200.png";
 import imgsigncop from "./assets/img/sign47.png";
+import { useEffect, useState } from "react";
+
+
+// saisi de text automatique
+const TypingEffect = ({ text, speed }) => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (index < text.length) {
+      const timeoutId = setTimeout(() => {
+        setDisplayedText(displayedText + text[index]);
+        setIndex(index + 1);
+      }, speed);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [index, text, displayedText, speed]);
+
+  return <p className="fs-5 mt-5">{displayedText}</p>;
+};
+// fin saisi
+
+
+
+
+
+
+
+
 
 const Portfolio = () => {
   const phoneNumber = "221770799748"; // Remplacez ce numéro par le vôtre au format international
   const linkedinProfileUrl = "https://www.linkedin.com/feed/?trk=404_page"; // Remplacez par l'URL de votre profil LinkedIn
   const instagramProfileUrl = "https://www.instagram.com/"; // Remplacez par l'URL de votre profil Instagram
+
+  // le texte saisi et sa vitesse
+  const text = "je suis technicien en maintenance informatique et développeur web. Avec plusieurs années d'expérience dans le domaine de l'informatique, je combine des compétences techniques solides avec une passion pour le développement web. Mon objectif est de fournir des solutions technologiques efficaces et innovantes qui répondent aux besoins de mes clients.";
+  const typingSpeed = 50; // Vitesse de frappe en millisecondes
+  
+// fin  le texte saisi et sa vitesse
 
   return (
     <div>
@@ -46,7 +81,7 @@ const Portfolio = () => {
               <Nav.Link href="#Recent work" style={{ color: "white" }}>
                 Recent work
               </Nav.Link>
-              <Nav.Link href="#Get In Touch" style={{ color: "white" }}>
+              <Nav.Link href="#GetInTouch" style={{ color: "white" }}>
                 Get In Touch
               </Nav.Link>
             </Nav>
@@ -88,7 +123,7 @@ const Portfolio = () => {
       {/* // fin-----------------------navbar-------------------- */}
       {/* ------------section home */}
       <section
-        className="#home bg-dark"
+        className="home bg-dark" id="home"
         style={{
           marginTop: "50px",
           color: "white",
@@ -98,18 +133,19 @@ const Portfolio = () => {
       >
         <Container>
           <Row>
-            <Col lg={6} md={12}>
+            <Col lg={6} md={12} className="text-thier">
               <h1 className="animate__animated animate__bounce fw-bold">
                 Thierno Mamadou Ba
               </h1>
-              <p className="fs-5 mt-5">
+              {/* <p className="fs-5 mt-5">
                 je suis technicien en maintenance informatique et développeur
                 web. Avec plusieurs années d'expérience dans le domaine de
                 l'informatique, je combine des compétences techniques solides
                 avec une passion pour le développement web. Mon objectif est de
                 fournir des solutions technologiques efficaces et innovantes qui
                 répondent aux besoins de mes clients.
-              </p>
+              </p> */}
+                    <TypingEffect text={text} speed={typingSpeed} />
               <button className="btnparti">Commençons</button>
             </Col>
             <Col lg={6} md={12}>
@@ -233,114 +269,234 @@ const Portfolio = () => {
           <h2 className="text-center mt-5">
             Voici quelques temoignage des clients
           </h2>
-          <Row className="mt-5">
+          <Row className="mt-5 gy-5">
             <Col lg={6} md={12}>
-              <div>
-                <p className="fs-5">
-                  Je tiens à exprimer ma gratitude envers Thierno mamadou <br />{" "}
-                  pour sont excellent service de maintenance informatique.{" "}
-                  <br /> En tant que petite entreprise, nous avons souvent été
-                  confrontés à des problèmes techniques qui affectaient notre
-                  productivité.
-                </p>
-              </div>
-              <div className="img-mere d-flex gap-4">
-                <div>
-                  <img
-                    src={imgram}
-                    alt=""
-                    style={{
-                      width: "130%",
-                      height: "50px",
-                      borderRadius: "50%",
-                    }}
-                  />
+              <div
+                style={{
+                  position: "relative",
+                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                  border: "1px solid #bbb",
+                  padding: "10px",
+                  borderRadius: "10px",
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "-15px",
+                    left: "40px",
+                    transform: "translateX(-50%)",
+                    padding: "5px",
+                  }}
+                >
+                  <i className="fa-solid fa-quote-left" style={{ color: "#bbb", fontSize: 30 }}></i>
                 </div>
                 <div>
-                  <h4>Ramata</h4>
+                  <p className="fs-5">
+                    Je tiens à exprimer ma gratitude envers Thierno mamadou{" "}
+                    <br /> pour son excellent service de maintenance
+                    informatique. <br /> En tant que petite entreprise, nous
+                    avons souvent été confrontés à des problèmes techniques qui
+                    affectaient notre productivité.
+                  </p>
+                </div>
+                <div
+                  className="img-mere d-flex gap-4"
+                  style={{
+                    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                    padding: "10px",
+                    borderRadius: "10px",
+                  }}
+                >
+                  <div>
+                    <img
+                      src={imgram}
+                      alt=""
+                      style={{
+                        width: "130%",
+                        height: "50px",
+                        borderRadius: "50%",
+                        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                        border: "2px solid #bbb",
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <h4>Ramata</h4>
+                  </div>
                 </div>
               </div>
             </Col>
             <Col lg={6} md={12}>
-              <div>
-                <p className="fs-5 ms-5">
-                  Le système de surveillance qu'ils ont mis en place est de
-                  haute qualité, offrant une couverture complète et des images
-                  claires en temps réel. Nous avons maintenant une tranquillité
-                  d'esprit totale, sachant que notre magasin est sécurisé 24
-                  heures sur 24, 7 jours sur 7.
-                </p>
-              </div>
-              <div className="img-mere d-flex gap-5 ms-5">
-                <div>
-                  <img
-                    src={imglemaire}
-                    alt=""
-                    style={{
-                      width: "220%",
-                      height: "50px",
-                      borderRadius: "50%",
-                    }}
-                  />
+              <div
+                style={{
+                  position: "relative",
+                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                  border: "1px solid #bbb",
+                  padding: "10px",
+                  borderRadius: "10px",
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "-15px",
+                    left: "40px",
+                    transform: "translateX(-50%)",
+                    padding: "5px",
+                  }}
+                >
+                  <i className="fas fa-comment" style={{ color: "#bbb" }}></i>
                 </div>
                 <div>
-                  <h4>Mouhamed</h4>
+                  <p className="fs-5 ms-5">
+                    Le système de surveillance qu'ils ont mis en place est de
+                    haute qualité, offrant une couverture complète et des images
+                    claires en temps réel. Nous avons maintenant une
+                    tranquillité d'esprit totale, sachant que notre magasin est
+                    sécurisé 24 heures sur 24.
+                  </p>
+                </div>
+                <div
+                  className="img-mere d-flex gap-5 ms-5"
+                  style={{
+                    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                    padding: "10px",
+                    borderRadius: "10px",
+                  }}
+                >
+                  <div>
+                    <img
+                      src={imglemaire}
+                      alt=""
+                      style={{
+                        width: "220%",
+                        height: "50px",
+                        borderRadius: "50%",
+                        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                        border: "2px solid #bbb",
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <h4>Mouhamed</h4>
+                  </div>
                 </div>
               </div>
             </Col>
           </Row>
-          <Row className="mt-5">
+          <Row className="mt-5 gy-5">
             <Col lg={6} md={12}>
-              <div>
-                <p className="fs-5">
-                  "Je souhaite exprimer ma plus grande satisfaction envers
-                  [Votre Nom ou Nom de votre entreprise] pour le développement
-                  exceptionnel de notre site web. En tant qu'entreprise en
-                  pleine croissance, il était essentiel pour nous d'avoir une
-                  présence en ligne professionnelle et attrayante.
-                </p>
-              </div>
-              <div className="img-mere d-flex gap-4">
-                <div>
-                  <img
-                    src={imgbass}
-                    alt=""
-                    style={{
-                      width: "130%",
-                      height: "50px",
-                      borderRadius: "50%",
-                    }}
-                  />
+              <div
+                style={{
+                  position: "relative",
+                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                  border: "1px solid #bbb",
+                  padding: "10px",
+                  borderRadius: "10px",
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "-15px",
+                    left: "40px",
+                    transform: "translateX(-50%)",
+                    padding: "5px",
+                  }}
+                >
+                  <i className="fas fa-comment" style={{ color: "#bbb" }}></i>
                 </div>
                 <div>
-                  <h4>Bassirou</h4>
+                  <p className="fs-5">
+                    Je souhaite exprimer ma plus grande satisfaction envers
+                    Thierno Mamadou Ba pour le développement exceptionnel de
+                    notre site web. En tant qu'entreprise en pleine croissance,
+                    il était essentiel pour nous d'avoir une présence en ligne
+                    professionnelle et attrayante.
+                  </p>
+                </div>
+                <div
+                  className="img-mere d-flex gap-5 ms-5"
+                  style={{
+                    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                    padding: "10px",
+                    borderRadius: "10px",
+                  }}
+                >
+                  <div>
+                    <img
+                      src={imgbass}
+                      alt=""
+                      style={{
+                        width: "130%",
+                        height: "50px",
+                        borderRadius: "50%",
+                        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                        border: "2px solid #bbb",
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <h4>Bassirou</h4>
+                  </div>
                 </div>
               </div>
             </Col>
             <Col lg={6} md={12}>
-              <div>
-                <p className="fs-5 ms-5">
-                  Son professionnalisme et son expertise ont été remarquables.
-                  Non seulement ils a résolu nos problèmes de manière efficace,
-                  mais il a également fourni des conseils précieux pour
-                  améliorer notre infrastructure informatique et éviter des
-                  problèmes futurs.
-                </p>
-              </div>
-              <div className="img-mere d-flex gap-4 ms-5">
-                <div>
-                  <img
-                    src={imgvieux}
-                    alt=""
-                    style={{
-                      width: "140%",
-                      height: "50px",
-                      borderRadius: "50%",
-                    }}
-                  />
+              <div
+                style={{
+                  position: "relative",
+                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                  border: "1px solid #bbb",
+                  padding: "10px",
+                  borderRadius: "10px",
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "-15px",
+                    left: "40px",
+                    transform: "translateX(-50%)",
+                    padding: "5px",
+                  }}
+                >
+                  <i className="fas fa-comment" style={{ color: "#bbb" }}></i>
                 </div>
                 <div>
-                  <h4>Birama Ndiaye</h4>
+                  <p className="fs-5 ms-5">
+                    Son professionnalisme et son expertise ont été remarquables.
+                    Non seulement ils a résolu nos problèmes de manière
+                    efficace, mais il a également fourni des conseils précieux
+                    pour améliorer notre infrastructure informatique et éviter
+                    des problèmes futurs.
+                  </p>
+                </div>
+                <div
+                  className="img-mere d-flex gap-5 ms-5"
+                  style={{
+                    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                    padding: "10px",
+                    borderRadius: "10px",
+                  }}
+                >
+                  <div>
+                    <img
+                      src={imgvieux}
+                      alt=""
+                      style={{
+                        width: "140%",
+                        height: "50px",
+                        borderRadius: "50%",
+                        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                        border: "2px solid #bbb",
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <h4>Birama Ndiaye</h4>
+                  </div>
                 </div>
               </div>
             </Col>
@@ -403,9 +559,9 @@ const Portfolio = () => {
               <img src={imgsign} alt="" style={{ width: "80%" }} />
               <p className="mt-5 fs-5">
                 Projet : Système d'Authentification avec Firebase <br />
-                 Dans le cadre de mon développement professionnel, j'ai
-                conçu et implémenté un système d'authentification robuste en
-                utilisant Firebase. Ce système permet une gestion sécurisée des
+                Dans le cadre de mon développement professionnel, j'ai conçu et
+                implémenté un système d'authentification robuste en utilisant
+                Firebase. Ce système permet une gestion sécurisée des
                 utilisateurs, offrant des fonctionnalités telles que
                 l'inscription, la connexion, la réinitialisation de mot de passe
                 et la vérification par e-mail. Firebase Authentication a été
@@ -430,6 +586,126 @@ const Portfolio = () => {
           </Row>
         </Container>
       </section>
+      {/* fin section travails */}
+
+      {/* section get in touch */}
+      <section id="GetInTouch" className="bg-dark">
+        <Container>
+          <h1 className="text-center mt-5" style={{color:"white"}}>Contact</h1>
+          <p className="text-center mt-5 fs-5" style={{color:"white"}}>
+            Je serais ravi d'avoir de vos nouvelles ! N'hésitez pas à me
+            contacter pour toute question, <br /> suggestion ou demande
+            d'information supplémentaire. Je suis là pour vous aider.
+          </p>
+          <Row className="justify-content-center">
+            <Col md={6}>
+              <div className="modals mt-5">
+                <form class="form">
+                  <div class="payment--options">
+                    <button name="paypal" type="button">
+                      <a
+                        href={linkedinProfileUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "black" }}
+                      >
+                        <i
+                          class="fa-brands fa-linkedin"
+                          style={{
+                            fontSize: "35px",
+                            marginTop: "10px",
+                            marginLeft: "45px",
+                          }}
+                        ></i>
+                      </a>
+                    </button>
+                    <button name="apple-pay" type="button">
+                      <a
+                        href={`https://wa.me/${phoneNumber}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "black" }}
+                      >
+                        <i
+                          class="fa-brands fa-whatsapp"
+                          style={{
+                            fontSize: "35px",
+                            marginTop: "10px",
+                            marginLeft: "45px",
+                          }}
+                        ></i>
+                      </a>
+                    </button>
+                    <button name="google-pay" type="button">
+                      <a
+                        href={instagramProfileUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "black" }}
+                      >
+                        <i
+                          class="fa-brands fa-instagram"
+                          style={{
+                            fontSize: "35px",
+                            marginTop: "10px",
+                            marginLeft: "45px",
+                          }}
+                        ></i>
+                      </a>
+                    </button>
+                  </div>
+                  <div class="separator">
+                    <hr class="line" />
+                    <p>Ou remplissez le formulaire ci-dessous.</p>
+                    <hr class="line" />
+                  </div>
+                  <div class="credit-card-info--form">
+                    <div class="input_container">
+                      <label for="cardholder_name" class="input_label">
+                        Email
+                      </label>
+                      <input
+                        id="email"
+                        class="input_field"
+                        type="email"
+                        name="cardholder_name"
+                        title="Input title"
+                        placeholder="Entrer votre Email" style={{color:"white"}}
+                      />
+                    </div>
+                    <div class="input_container">
+                      <label for="card_number" class="input_label">
+                        Mobile
+                      </label>
+                      <input
+                        id="number"
+                        class="input_field"
+                        type="number"
+                        name="number"
+                        title="Input title"
+                        placeholder="Votre numero de telephone" style={{color:"white"}}
+                      />
+                    </div>
+                    <div class="input_container">
+                      <label for="expiry_date" class="input_label">
+                        Message
+                      </label>
+                      <textarea rows="4" cols="50">
+                        Ecrivez votre message...
+                      </textarea>
+                    </div>
+                  </div>
+                  <button className="fs-5" style={{paddingTop:"10px", paddingLeft:"40px", marginLeft:"120px"}} >Envoyer</button>
+                </form>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      {/* section get in touch */}
+      <footer className="bg-dark">
+        <h5 className="text-center" style={{color:"white",paddingTop:"50px"}}>Made with</h5>
+      </footer>
     </div>
   );
 };
