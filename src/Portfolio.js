@@ -102,7 +102,7 @@ const [email, setemail] = useState("");
       setmobile("");
       setmessage("");
 
-      toast.success("ajouté avec succès");
+      toast.success("envoyer avec succès");
     } catch (error) {
       toast.error("Error: " + error.message);
     }
