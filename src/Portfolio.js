@@ -2,7 +2,9 @@ import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import imgprogramation from "./assets/img/imgprogrammation tech.jpg";
 import imgmaintrnance from "./assets/img/labo-1024x461.jpg";
 import imgcameras from "./assets/img/camera-surveillance-exterieur-1024x575.jpg";
-import monimg from "./assets/img/monimg.jpg";
+import monimg from "./assets/img/thier3b.jpg";
+import tofthier from "./assets/img/tofthier1d.jpg";
+import "react-toastify/dist/ReactToastify.css";
 // import myimg from "./assets/img/my_img-removebg-preview.png"
 import imgram from "./assets/img/ramata.png";
 import imglemaire from "./assets/img/lemaire.jpg";
@@ -14,6 +16,18 @@ import "animate.css";
 import imgsign from "./assets/img/Capture d'écran 2024-06-11 164200.png";
 import imgsigncop from "./assets/img/sign47.png";
 import { useEffect, useState } from "react";
+
+import {
+  getDownloadURL,
+  ref as storageRef,
+  uploadBytes,
+} from "firebase/storage";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import { addDoc, collection, getDocs } from "firebase/firestore";
+import { fireDb } from "./firebase";
+
+
 
 
 // saisi de text automatique
@@ -54,6 +68,47 @@ const Portfolio = () => {
   
 // fin  le texte saisi et sa vitesse
 
+const [val, setVal] = useState(""); // Définir l'état et la fonction de mise à jour
+
+const [email, setemail] = useState("");
+  const [mobile, setmobile] = useState("");
+  const [message, setmessage] = useState("");
+
+  const value = collection(fireDb, "User");
+
+  useEffect(() => {
+    const getData = async () => {
+      const dbVal = await getDocs(value);
+      setVal(dbVal.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getData();
+  }, []);
+
+  const handleCreateAndUpload = async () => {
+    // verifier si les champs sont vide
+    if (!email || !mobile || !message) {
+      toast.error("champ requis");
+      return;
+    }
+    // creation du dossier de stockage et la synchronisation de l'image ajoutée
+    try {
+      await addDoc(value, {
+        email: email,
+        mobile: mobile,
+        message: message,
+      });
+
+      setemail("");
+      setmobile("");
+      setmessage("");
+
+      toast.success("ajouté avec succès");
+    } catch (error) {
+      toast.error("Error: " + error.message);
+    }
+  };
+
+
   return (
     <div>
       <Navbar
@@ -70,19 +125,19 @@ const Portfolio = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto gap-5 fs-5">
               <Nav.Link href="#home" style={{ color: "white" }}>
-                Home
+              Accueil
               </Nav.Link>
               <Nav.Link href="#CaseStudies" style={{ color: "white" }}>
-                Case Studies
+              Études de cas
               </Nav.Link>
               <Nav.Link href="#Testimonials" style={{ color: "white" }}>
-                Testimonials
+              Témoignages
               </Nav.Link>
               <Nav.Link href="#Recent work" style={{ color: "white" }}>
-                Recent work
+              Travaux récents
               </Nav.Link>
               <Nav.Link href="#GetInTouch" style={{ color: "white" }}>
-                Get In Touch
+              Contact
               </Nav.Link>
             </Nav>
             <div className="d-flex gap-5 fs-5">
@@ -128,7 +183,6 @@ const Portfolio = () => {
           marginTop: "50px",
           color: "white",
           paddingTop: "210px",
-          height: "100%",
         }}
       >
         <Container>
@@ -148,12 +202,18 @@ const Portfolio = () => {
                     <TypingEffect text={text} speed={typingSpeed} />
               <button className="btnparti">Commençons</button>
             </Col>
-            <Col lg={6} md={12}>
+            <Col className="image-container" lg={6} md={12}>
               <img
                 src={monimg}
                 alt=""
-                style={{ width: "50%", height: "70%", borderRadius: "50%" }}
-                className="ms-5"
+                style={{ width: "150%", height: "150%", borderRadius: "60%" }}
+                className="image not-smiling ms-5"
+              />
+               <img
+                src={tofthier}
+                alt=""
+                style={{  width: "150%", height: "150%", borderRadius: "60%" }}
+                className="image smiling ms-5"
               />
             </Col>
           </Row>
@@ -293,7 +353,7 @@ const Portfolio = () => {
                 </div>
                 <div>
                   <p className="fs-5">
-                    Je tiens à exprimer ma gratitude envers Thierno mamadou{" "}
+                    Je tiens à exprimer ma gratitude envers Thierno mamadou
                     <br /> pour son excellent service de maintenance
                     informatique. <br /> En tant que petite entreprise, nous
                     avons souvent été confrontés à des problèmes techniques qui
@@ -346,8 +406,8 @@ const Portfolio = () => {
                     padding: "5px",
                   }}
                 >
-                  <i className="fas fa-comment" style={{ color: "#bbb" }}></i>
-                </div>
+                  <i className="fa-solid fa-quote-left" style={{ color: "#bbb", fontSize: 30 }}></i>
+                  </div>
                 <div>
                   <p className="fs-5 ms-5">
                     Le système de surveillance qu'ils ont mis en place est de
@@ -405,8 +465,8 @@ const Portfolio = () => {
                     padding: "5px",
                   }}
                 >
-                  <i className="fas fa-comment" style={{ color: "#bbb" }}></i>
-                </div>
+                  <i className="fa-solid fa-quote-left" style={{ color: "#bbb", fontSize: 30 }}></i>
+                  </div>
                 <div>
                   <p className="fs-5">
                     Je souhaite exprimer ma plus grande satisfaction envers
@@ -462,8 +522,8 @@ const Portfolio = () => {
                     padding: "5px",
                   }}
                 >
-                  <i className="fas fa-comment" style={{ color: "#bbb" }}></i>
-                </div>
+                  <i className="fa-solid fa-quote-left" style={{ color: "#bbb", fontSize: 30 }}></i>
+                  </div>
                 <div>
                   <p className="fs-5 ms-5">
                     Son professionnalisme et son expertise ont été remarquables.
@@ -510,7 +570,7 @@ const Portfolio = () => {
 
       <section id="Recent work">
         <Container>
-          <h1 className="text-center mt-5">Recent work</h1>
+          <h1 className="text-center mt-5">Travaux récents</h1>
           <h4 className="text-center mt-5">
             Voici quelques projet que j' ai eu a developper
           </h4>
@@ -602,7 +662,7 @@ const Portfolio = () => {
               <div className="modals mt-5">
                 <form class="form">
                   <div class="payment--options">
-                    <button name="paypal" type="button">
+                    <button name="paypal" type="button" style={{width:"100%"}}>
                       <a
                         href={linkedinProfileUrl}
                         target="_blank"
@@ -619,7 +679,7 @@ const Portfolio = () => {
                         ></i>
                       </a>
                     </button>
-                    <button name="apple-pay" type="button">
+                    <button name="apple-pay" type="button"  style={{width:"100%"}}>
                       <a
                         href={`https://wa.me/${phoneNumber}`}
                         target="_blank"
@@ -636,7 +696,7 @@ const Portfolio = () => {
                         ></i>
                       </a>
                     </button>
-                    <button name="google-pay" type="button">
+                    <button name="google-pay" type="button"  style={{width:"100%"}}>
                       <a
                         href={instagramProfileUrl}
                         target="_blank"
@@ -670,7 +730,8 @@ const Portfolio = () => {
                         type="email"
                         name="cardholder_name"
                         title="Input title"
-                        placeholder="Entrer votre Email" style={{color:"white"}}
+                        placeholder="Entrer votre Email"  value={email}
+                        onChange={(e) => setemail(e.target.value)} style={{color:"white"}}
                       />
                     </div>
                     <div class="input_container">
@@ -683,29 +744,31 @@ const Portfolio = () => {
                         type="number"
                         name="number"
                         title="Input title"
-                        placeholder="Votre numero de telephone" style={{color:"white"}}
+                        placeholder="Votre numero de telephone"  value={mobile}
+                        onChange={(e) => setmobile(e.target.value)} style={{color:"white"}}
                       />
                     </div>
                     <div class="input_container">
                       <label for="expiry_date" class="input_label">
                         Message
                       </label>
-                      <textarea rows="4" cols="50">
+                      <textarea rows="4" cols="50"  value={message}
+            onChange={(e) => setmessage(e.target.value)}>
                         Ecrivez votre message...
                       </textarea>
                     </div>
                   </div>
-                  <button className="fs-5" style={{paddingTop:"10px", paddingLeft:"40px", marginLeft:"120px"}} >Envoyer</button>
-                </form>
+                  </form>
+                  <button onClick={handleCreateAndUpload} className="fs-5" style={{paddingTop:"10px", paddingLeft:"40px", marginLeft:"150px"}}>Envoyer</button>
               </div>
             </Col>
           </Row>
         </Container>
       </section>
       {/* section get in touch */}
-      <footer className="bg-dark">
+      {/* <footer className="bg-dark">
         <h5 className="text-center" style={{color:"white",paddingTop:"50px"}}>Made with</h5>
-      </footer>
+      </footer> */}
     </div>
   );
 };

@@ -1,291 +1,341 @@
      /* Style for the navbar toggler button when in responsive mode */
-.navbar-toggler {
-  border-color: white;
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}   
-   
-   
-   
-   .btnparti{
-      color: white;
-      background-color: rgb(68, 14, 233);
-      width: 50%;
-      height: 60px;
-      border: none;
-      padding-top: 15px;
-      padding-left: 15px;
+     .navbar-toggler {
+      border-color: white;
     }
-     .nav-link:hover{
-      border-bottom: 2px solid white;
-    }
-    a:hover{
-      border-bottom: 2px solid white;
-    }
-
-/* animate */
-    .my-element {
-      display: inline-block;
-      margin: 0 0.5rem;
     
-      animation: bounce; /* referring directly to the animation's @keyframe declaration */
-      animation-duration: 2s; /* don't forget to set a duration! */
-    }
-
-  /* css button */
-
-  button {
-    outline: 0;
-    border: 0;
-    display: flex;
-    flex-direction: column;
-    width: 120%;
-    max-width: 140px;
-    height: 50px;
-    border-radius: 0.5em;
-    box-shadow: 0 0.625em 1em 0 rgba(30, 143, 255, 0.35);
-    overflow: hidden;
-   }
-   
-   button div {
-    transform: translateY(0px);
-    width: 200%;
-   }
-   
-   button,
-   button div {
-    transition: 0.6s cubic-bezier(.16,1,.3,1);
-   }
-   
-   button div span {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 50px;
-    padding: 0.75em 1.125em;
-   }
-   
-   button div:nth-child(1) {
-    background-color: #1e90ff;
-   }
-   
-   button div:nth-child(2) {
-    background-color: #21dc62;
-   }
-   
-   button:hover {
-    box-shadow: 0 0.625em 1em 0 rgba(33, 220, 98, 0.35);
-   }
-   
-   button:hover div {
-    transform: translateY(-50px);
-   }
-   
-   button p {
-    font-size: 17px;
-    font-weight: bold;
-    color: #ffffff;
-   }
-   
-   button:active {
-    transform: scale(0.95);
-   }
-
-   .Testimonials{
-    height: 850px;
-  }
-
-
-
-  /* -------------CONTACT CSS------------- */
-  .modals {
-  width: fit-content;
-  height: fit-content;
-  background: #100f0f;
-  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 26px;
-  max-width: 450px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-}
-
-.payment--options {
-  width: calc(100% - 40px);
-  display: grid;
-  grid-template-columns: 33% 34% 33%;
-  gap: 20px;
-  padding: 10px;
-}
-
-.payment--options button {
-  height: 55px;
-  background: #F2F2F2;
-  border-radius: 11px;
-  padding: 0;
-  border: 0;
-  outline: none;
-}
-
-.payment--options button svg {
-  height: 18px;
-}
-
-.payment--options button:last-child svg {
-  height: 22px;
-}
-
-.separator {
-  width: calc(100% - 20px);
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 10px;
-  color: #8B8E98;
-  margin: 0 10px;
-}
-
-.separator > p {
-  word-break: keep-all;
-  display: block;
-  text-align: center;
-  font-weight: 600;
-  font-size: 11px;
-  margin: auto;
-}
-
-.separator .line {
-  display: inline-block;
-  width: 100%;
-  height: 1px;
-  border: 0;
-  background-color: #e8e8e8;
-  margin: auto;
-}
-
-.credit-card-info--form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.input_container {
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.split {
-  display: grid;
-  grid-template-columns: 4fr 2fr;
-  gap: 15px;
-}
-
-.split input {
-  width: 100%;
-}
-
-.input_label {
-  font-size: 10px;
-  color: #8B8E98;
-  font-weight: 600;
-}
-
-.input_field {
-  width: auto;
-  height: 40px;
-  padding: 0 0 0 16px;
-  border-radius: 9px;
-  outline: none;
-  background-color: #F2F2F2;
-  border: 1px solid #e5e5e500;
-  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
-}
-
-.input_field:focus {
-  border: 1px solid transparent;
-  box-shadow: 0px 0px 0px 2px #242424;
-  background-color: transparent;
-}
-
-.purchase--btn {
-  height: 55px;
-  background: #F2F2F2;
-  border-radius: 11px;
-  border: 0;
-  outline: none;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 700;
-  background: linear-gradient(180deg, #363636 0%, #1B1B1B 50%, #000000 100%);
-  box-shadow: 0px 0px 0px 0px #FFFFFF, 0px 0px 0px 0px #000000;
-  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
-}
-
-.purchase--btn:hover {
-  box-shadow: 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #0000003a;
-}
-
-/* Reset input number styles */
-.input_field::-webkit-outer-spin-button,
-.input_field::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.input_field[type=number] {
-  -moz-appearance: textfield;
-}
-
-
-    /* ---------FIN ----CONTACT CSS------------- */
-
-
-    
-
-   /* responsive mode tablet */
-
-
-
-
-   /* responsive mode tablet */
-
- @media screen and (max-width:768px){
-    .Testimonials{
-      height: 1400px;
-    }
-/* 
-    .modals {
-      position: relative;
-      left: 125px;
-    } */
-
- }
-
-
-
-
-    /* responsive mode tablet */
-
-    @media screen and (max-width:560px){
-      .Testimonials{
-        height: 1850px;
-      }
-      .home{
-        position: relative;
-        bottom: 70px;
-      }
-
-      .modals {
-        position: relative;
-        left: -23px;
-      }
-   } 
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }   
+       
+    .home{
+      height: 700px;
   
+    }
+
+    .image-container {
+      position: relative;
+      width: 200px; /* Adjust to the size of your images */
+      height: 200px; /* Adjust to the size of your images */
+  }
+  
+  .image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.5s ease;
+  }
+  
+  .smiling {
+      opacity: 0;
+  }
+  
+  .image-container:hover .smiling {
+      opacity: 1;
+  }
+  
+  .image-container:hover .not-smiling {
+      opacity: 0;
+  }
+       
+       
+       .btnparti{
+          color: white;
+          background-color: rgb(68, 14, 233);
+          width: 50%;
+          height: 60px;
+          border: none;
+          padding-top: 15px;
+          padding-left: 15px;
+        }
+         .nav-link:hover{
+          border-bottom: 2px solid white;
+        }
+        a:hover{
+          border-bottom: 2px solid white;
+        }
+    
+    /* animate */
+        .my-element {
+          display: inline-block;
+          margin: 0 0.5rem;
+        
+          animation: bounce; /* referring directly to the animation's @keyframe declaration */
+          animation-duration: 2s; /* don't forget to set a duration! */
+        }
+    
+      /* css button */
+    
+      button {
+        outline: 0;
+        border: 0;
+        display: flex;
+        flex-direction: column;
+        width: 120%;
+        max-width: 140px;
+        height: 50px;
+        border-radius: 0.5em;
+        box-shadow: 0 0.625em 1em 0 rgba(30, 143, 255, 0.35);
+        overflow: hidden;
+       }
+       
+       button div {
+        transform: translateY(0px);
+        width: 200%;
+       }
+       
+       button,
+       button div {
+        transition: 0.6s cubic-bezier(.16,1,.3,1);
+       }
+       
+       button div span {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        padding: 0.75em 1.125em;
+       }
+       
+       button div:nth-child(1) {
+        background-color: #1e90ff;
+       }
+       
+       button div:nth-child(2) {
+        background-color: #21dc62;
+       }
+       
+       button:hover {
+        box-shadow: 0 0.625em 1em 0 rgba(33, 220, 98, 0.35);
+       }
+       
+       button:hover div {
+        transform: translateY(-50px);
+       }
+       
+       button p {
+        font-size: 17px;
+        font-weight: bold;
+        color: #ffffff;
+       }
+       
+       button:active {
+        transform: scale(0.95);
+       }
+    
+       .Testimonials{
+        height: 850px;
+      }
+    
+    
+    
+      /* -------------CONTACT CSS------------- */
+      .modals {
+      width: fit-content;
+      height: fit-content;
+      background: #100f0f;
+      box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+      border-radius: 26px;
+      max-width: 450px;
+    }
+    
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+    
+    .payment--options {
+      width: calc(100% - 40px);
+      display: grid;
+      grid-template-columns: 33% 34% 33%;
+      gap: 20px;
+      padding: 10px;
+    }
+    
+    .payment--options button {
+      height: 55px;
+      background: #F2F2F2;
+      border-radius: 11px;
+      padding: 0;
+      border: 0;
+      outline: none;
+    }
+    
+    .payment--options button svg {
+      height: 18px;
+    }
+    
+    .payment--options button:last-child svg {
+      height: 22px;
+    }
+    
+    .separator {
+      width: calc(100% - 20px);
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 10px;
+      color: #8B8E98;
+      margin: 0 10px;
+    }
+    
+    .separator > p {
+      word-break: keep-all;
+      display: block;
+      text-align: center;
+      font-weight: 600;
+      font-size: 11px;
+      margin: auto;
+    }
+    
+    .separator .line {
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      border: 0;
+      background-color: #e8e8e8;
+      margin: auto;
+    }
+    
+    .credit-card-info--form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .input_container {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .split {
+      display: grid;
+      grid-template-columns: 4fr 2fr;
+      gap: 15px;
+    }
+    
+    .split input {
+      width: 100%;
+    }
+    
+    .input_label {
+      font-size: 10px;
+      color: #8B8E98;
+      font-weight: 600;
+    }
+    
+    .input_field {
+      width: auto;
+      height: 40px;
+      padding: 0 0 0 16px;
+      border-radius: 9px;
+      outline: none;
+      background-color: #F2F2F2;
+      border: 1px solid #e5e5e500;
+      transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+    }
+    
+    .input_field:focus {
+      border: 1px solid transparent;
+      box-shadow: 0px 0px 0px 2px #242424;
+      background-color: transparent;
+    }
+    
+    .purchase--btn {
+      height: 55px;
+      background: #F2F2F2;
+      border-radius: 11px;
+      border: 0;
+      outline: none;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      background: linear-gradient(180deg, #363636 0%, #1B1B1B 50%, #000000 100%);
+      box-shadow: 0px 0px 0px 0px #FFFFFF, 0px 0px 0px 0px #000000;
+      transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+    }
+    
+    .purchase--btn:hover {
+      box-shadow: 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #0000003a;
+    }
+    
+    /* Reset input number styles */
+    .input_field::-webkit-outer-spin-button,
+    .input_field::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    
+    .input_field[type=number] {
+      -moz-appearance: textfield;
+    }
+    
+    
+        /* ---------FIN ----CONTACT CSS------------- */
+    
+    
+        
+    
+       /* responsive mode tablet */
+    
+    
+    
+    
+       /* responsive mode tablet */
+    
+     @media screen and (max-width:768px){
+
+      .home{
+        height: 970px;
+      }
+
+      .image {
+        position: relative;
+        left: 170px;
+        top: 50px;
+      }
+        .Testimonials{
+          height: 1400px;
+        }
+    
+        .modals {
+          position: relative;
+          left: -10px;
+        }
+    
+     }
+    
+    
+    
+    
+        /* responsive mode PHONE */
+    
+        @media screen and (max-width:560px){
+         
+          .home{
+            height: 1000px;
+            position: relative;
+            bottom: 70px;
+          }
+
+          .image {
+            position: relative;
+            left: 20px;
+            top: 50px;
+          }
+          .modals {
+          margin-left: -20px;
+          }
+          .Testimonials{
+            height: 1850px;
+          }
+    
+          .modals {
+            position: relative;
+            left: 2px;
+          }
+       } 
+      
