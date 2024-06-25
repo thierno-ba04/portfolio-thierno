@@ -6,36 +6,13 @@
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }   
-       
-    .home{
-      height: 700px;
   
-    }
 
-    .image-container {
-      position: relative;
-      width: 200px; /* Adjust to the size of your images */
-      height: 200px; /* Adjust to the size of your images */
-  }
   
-  .image {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      transition: opacity 0.5s ease;
-  }
   
-  .smiling {
-      opacity: 0;
-  }
-  
-  .image-container:hover .smiling {
-      opacity: 1;
-  }
-  
-  .image-container:hover .not-smiling {
-      opacity: 0;
-  }
+ .Testimonials{
+  height: 330px;
+ }
        
        
        .btnparti{
@@ -135,7 +112,7 @@
       background: #100f0f;
       box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
       border-radius: 26px;
-      max-width: 450px;
+      width: 100%;
     }
     
     .form {
@@ -272,12 +249,53 @@
     .input_field[type=number] {
       -moz-appearance: textfield;
     }
+
+    .send{
+      position: relative;
+      left: 95px;
+    }
     
     
         /* ---------FIN ----CONTACT CSS------------- */
     
     
         
+        /* responsive mode PHONE */
+    
+        @media screen and (min-width: 320px){
+         
+          .home{
+            height: 1000px;
+            position: relative;
+            bottom: 70px;
+          }
+
+          .image {
+            position: relative;
+            left: 0px;
+            top: 50px;
+          }
+         
+          .Testimonials{
+            height:2220px; 
+          }
+    
+          .modals {
+            position: relative;
+            left: 2px;
+          }
+
+          .fabrandss{
+            position: relative;
+            left: -40px;
+          }
+
+          .send{
+            position: relative;
+            left: -75px;
+          }
+       } 
+       
     
        /* responsive mode tablet */
     
@@ -286,7 +304,7 @@
     
        /* responsive mode tablet */
     
-     @media screen and (max-width:768px){
+     @media screen and (min-width: 768px){
 
       .home{
         height: 970px;
@@ -298,44 +316,21 @@
         top: 50px;
       }
         .Testimonials{
-          height: 1400px;
+          height:1400px; 
         }
     
         .modals {
           position: relative;
           left: -10px;
         }
+
+        .send{
+          position: relative;
+          left: -55px;
+        }
     
      }
     
     
     
-    
-        /* responsive mode PHONE */
-    
-        @media screen and (max-width:560px){
-         
-          .home{
-            height: 1000px;
-            position: relative;
-            bottom: 70px;
-          }
-
-          .image {
-            position: relative;
-            left: 20px;
-            top: 50px;
-          }
-          .modals {
-          margin-left: -20px;
-          }
-          .Testimonials{
-            height: 1850px;
-          }
-    
-          .modals {
-            position: relative;
-            left: 2px;
-          }
-       } 
-      
+   
