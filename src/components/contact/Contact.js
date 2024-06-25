@@ -172,12 +172,15 @@ const handleCreateAndUpload = async () => {
                     </div>
                   </div>
                   </form>
-                  <button onClick={handleCreateAndUpload} className="send fs-5" style={{paddingTop:"10px", paddingLeft:"40px", marginLeft:"150px"}}>Envoyer</button>
+                  <button onClick={handleCreateAndUpload} className="send fs-5 text-dark" style={{paddingTop:"10px", paddingLeft:"40px", marginLeft:"150px"}}>Envoyer</button>
               </div>
             </Col>
           </Row>
         </Container>
       </section>
+      {/* <footer className="bg-dark">
+      <h5 className="text-center mt-" style={{color:"white"}}>Copy right thierno ba</h5>
+      </footer> */}
       {/* section get in touch */}
         </div>
     );
