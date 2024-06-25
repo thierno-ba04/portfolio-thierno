@@ -63,7 +63,7 @@ const Temoignage = () => {
                   <div>
                     <img
                       src={imgram}
-                      alt=""
+                      alt="" className="img-tes"
                       style={{
                         width: "130%",
                         height: "50px",
@@ -120,7 +120,7 @@ const Temoignage = () => {
                   <div>
                     <img
                       src={imglemaire}
-                      alt=""
+                      alt="" className="img-tes"
                       style={{
                         width: "220%",
                         height: "50px",
@@ -179,7 +179,7 @@ const Temoignage = () => {
                   <div>
                     <img
                       src={imgbass}
-                      alt=""
+                      alt="" className="img-tes"
                       style={{
                         width: "130%",
                         height: "50px",
@@ -236,7 +236,7 @@ const Temoignage = () => {
                   <div>
                     <img
                       src={imgvieux}
-                      alt=""
+                      alt="" className="img-tes"
                       style={{
                         width: "140%",
                         height: "50px",

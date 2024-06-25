@@ -59,16 +59,17 @@ const Etude = () => {
                 performance des systèmes.
               </p>
               <button
-                className="mt-"
+                className="mt-5"
                 style={{
                   background: "rgb(68, 14, 233)",
                   color: "white",
                   border: "none",
-                  height: "50px",
-                  width: "20%",
+                  height: "40px",
+                   paddingLeft:"25px",
+                  paddingTop:"8px"
                 }}
               >
-                Voir l'étude de cas
+                Voir l'étude
               </button>
             </Col>
           </Row>
@@ -90,11 +91,13 @@ const Etude = () => {
                   background: "rgb(68, 14, 233)",
                   color: "white",
                   border: "none",
-                  height: "50px",
-                  width: "20%",
+                  height: "40px",
+                  paddingLeft:"25px",
+                  paddingTop:"8px"
+
                 }}
               >
-                Voir l'étude de cas
+                Voir l'étude
               </button>
             </Col>
             <Col className="mt-5" lg={6} md={12}>

@@ -1,8 +1,4 @@
-     /* Style for the navbar toggler button when in responsive mode */
-     .navbar-toggler {
-      border-color: white;
-    }
-    
+
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }   
@@ -11,7 +7,7 @@
   
   
  .Testimonials{
-  height: 330px;
+  height: 30px;
  }
        
        
@@ -276,8 +272,10 @@
             top: 50px;
           }
          
-          .Testimonials{
-            height:2220px; 
+         
+
+          .img-tes{
+            display: none;
           }
     
           .modals {
@@ -285,14 +283,18 @@
             left: 2px;
           }
 
+          .Testimonials{
+            height:2130px; 
+          }
+
           .fabrandss{
             position: relative;
-            left: -40px;
+            left: -38px;
           }
 
           .send{
             position: relative;
-            left: -75px;
+            left: -50px;
           }
        } 
        
@@ -316,12 +318,17 @@
         top: 50px;
       }
         .Testimonials{
-          height:1400px; 
+          height:1300px; 
         }
     
         .modals {
           position: relative;
           left: -10px;
+        }
+
+        .fabrandss{
+          position: relative;
+          left: -35px;
         }
 
         .send{
@@ -330,6 +337,33 @@
         }
     
      }
+
+
+            /* responsive mode LAPTOP */
+
+
+     @media screen and (min-width: 1024px){
+
+
+   
+        .Testimonials{
+          height:850px; 
+        }
+    
+        .fabrandss{
+          position: relative;
+          left: 5px;
+        }
+
+
+        .send{
+          position: relative;
+          left: 95px;
+        }
+
+    
+     }
+    
     
     
     

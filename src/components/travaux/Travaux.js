@@ -22,7 +22,7 @@ const Travaux = () => {
                 src={imgajou}
                 alt=""
                 style={{ height: "80%", height: "70%" }}
-                className=""
+                className="ms-2"
               />
             </Col>
             <Col lg={6} md={12}>

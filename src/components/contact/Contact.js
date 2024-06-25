@@ -74,7 +74,7 @@ const handleCreateAndUpload = async () => {
             <Col md={6}>
               <div className="modals mt-5">
                 <form class="form">
-                  <div class="payment--options">
+                  <div className="payment--options">
                     <button name="paypal" type="button" style={{width:"100%"}}>
                       <a
                         href={linkedinProfileUrl}
